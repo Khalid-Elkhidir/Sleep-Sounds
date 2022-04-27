@@ -11,6 +11,7 @@ class OnBoarding extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    TextTheme textTheme = Theme.of(context).textTheme;
     return Column(
       children: [
         Image.asset(image),
@@ -23,12 +24,7 @@ class OnBoarding extends StatelessWidget {
             children: [
               Text(
                 title,
-                style: const TextStyle(
-                    fontFamily: "Nunito",
-                    fontWeight: FontWeight.w900,
-                    fontSize: 31,
-                  color: Colors.white,
-                ),
+                style: textTheme.headline4,
               ),
               const SizedBox(
                 height: 5,
@@ -36,12 +32,9 @@ class OnBoarding extends StatelessWidget {
               Text(
                 subTitle,
                 textAlign: TextAlign.center,
-                style: const TextStyle(
-                    fontFamily: "Nunito",
-                    fontWeight: FontWeight.w600,
-                    fontSize: 16,
+                style: textTheme.subtitle1!.copyWith(
                   height: 1.2,
-                  color: Color(0xAAEBEBF6),
+                  fontSize: 16
                 ),
               ),
             ],
