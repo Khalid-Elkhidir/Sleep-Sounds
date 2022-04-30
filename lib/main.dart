@@ -30,11 +30,17 @@ class MyApp extends StatelessWidget {
             fontWeight: FontWeight.w600,
             color: Color(0xAAEBEBF6),
           ),
+          caption: TextStyle(
+            fontFamily: "Nunito",
+            fontWeight: FontWeight.w600,
+            fontSize: 12,
+            color: Colors.white38,
+          ),
         ),
         appBarTheme: AppBarTheme(
           backgroundColor: Color(0xFF21283F),
           systemOverlayStyle: SystemUiOverlayStyle(
-            statusBarColor: Color(0xFF21283F),
+            statusBarColor: Colors.transparent,
           )
         ),
         colorScheme: ColorScheme.fromSwatch().copyWith(
@@ -57,7 +63,15 @@ class MyApp extends StatelessWidget {
             shape: MaterialStateProperty.all(RoundedRectangleBorder(
                 borderRadius: BorderRadius.circular(100))),
           )
-        )
+        ),
+        tabBarTheme: TabBarTheme(
+          splashFactory: NoSplash.splashFactory,
+          overlayColor: MaterialStateProperty.resolveWith (
+                (Set  states) {
+              return states.contains(MaterialState.focused) ? null : Colors.transparent;
+            },
+          ),
+        ),
       ),
       home: const LoginScreen(),
     );

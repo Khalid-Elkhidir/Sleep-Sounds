@@ -1,7 +1,7 @@
 class Song {
   String name;
   String pack;
-  double duration;
+  int duration;
 
   Song({
     required this.name,

@@ -7,11 +7,14 @@ class CustomTab extends Tab {
   CustomTab({Key? key, required this.customIcon, required this.customText})
       : super(
           key: key,
-          child: ElevatedButton(
-            onPressed: () {},
+          child: Container(
+            padding: EdgeInsets.fromLTRB(8, 0, 16, 0),
             child: Row(
               children: [
                 ImageIcon(AssetImage(customIcon)),
+                SizedBox(
+                  width: 4,
+                ),
                 Text(customText),
               ],
             ),
