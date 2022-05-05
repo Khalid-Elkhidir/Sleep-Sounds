@@ -24,9 +24,6 @@ class _MainScreenState extends State<MainScreen> {
           child: BottomNavigationBar(
             currentIndex: currentIndex,
             onTap: (newIndex) => setState((){currentIndex = newIndex;}),
-            backgroundColor: Color(0xFF2D344B),
-            showUnselectedLabels: false,
-            unselectedItemColor: Colors.white70,
             items: const [
               BottomNavigationBarItem(
                 label: "Sleep",

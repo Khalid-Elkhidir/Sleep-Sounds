@@ -30,12 +30,7 @@ class _SleepScreenState extends State<SleepScreen> {
               currentIndex = newIndex;
             }),
             physics: BouncingScrollPhysics(),
-            indicatorWeight: 0,
             isScrollable: true,
-            indicator:
-                ShapeDecoration(shape: StadiumBorder(), color: Colors.blue),
-            unselectedLabelColor: Colors.white,
-            indicatorSize: TabBarIndicatorSize.label,
             tabs: [
               CustomTab(
                   customIcon: "assets/icons/keypad.png", customText: "All"),
@@ -53,7 +48,6 @@ class _SleepScreenState extends State<SleepScreen> {
             "Sleep",
             style: textTheme.headline4!.copyWith(fontSize: 24),
           ),
-          backgroundColor: Color(0xFF21283F),
           elevation: 0,
         ),
         body: currentIndex == 0

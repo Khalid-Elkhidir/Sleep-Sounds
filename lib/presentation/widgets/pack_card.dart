@@ -21,7 +21,7 @@ class PackCard extends StatelessWidget {
             Positioned(
               child: GestureDetector(
                 onTap: () {
-                    Navigator.of(context).push(MaterialPageRoute(builder: (context) => PackDetails()),);
+                    Navigator.of(context).push(MaterialPageRoute(builder: (context) => PackDetails(pack: pack,)),);
                 },
                 child: Container(
                   clipBehavior: Clip.hardEdge,
