@@ -4,7 +4,7 @@ import 'package:flutter/services.dart';
 import 'constants.dart';
 
 ThemeData kDarkTheme = ThemeData(
-  scaffoldBackgroundColor: kPrimaryColor,
+  scaffoldBackgroundColor: kBackgroundPrimaryColor,
   textTheme: const TextTheme(
     headline4: TextStyle(
         fontFamily: "Nunito",
@@ -31,16 +31,16 @@ ThemeData kDarkTheme = ThemeData(
     ),
   ),
   appBarTheme: const AppBarTheme(
-      backgroundColor: kPrimaryColor,
+      backgroundColor: kBackgroundPrimaryColor,
       systemOverlayStyle: SystemUiOverlayStyle(
         statusBarColor: Colors.transparent,
       )),
   colorScheme: ColorScheme.fromSwatch().copyWith(
-    secondary: kSecondaryColor,
+    secondary: kBackgroundSecondaryColor,
   ),
   elevatedButtonTheme: ElevatedButtonThemeData(
     style: ButtonStyle(
-      backgroundColor: MaterialStateProperty.all(kSecondaryColor),
+      backgroundColor: MaterialStateProperty.all(kBackgroundSecondaryColor),
       elevation: MaterialStateProperty.all(0),
       // padding: MaterialStateProperty.all(
       //     EdgeInsets.symmetric(horizontal: 50, vertical: 10)),
@@ -50,7 +50,7 @@ ThemeData kDarkTheme = ThemeData(
   ),
   textButtonTheme: TextButtonThemeData(
       style: ButtonStyle(
-    foregroundColor: MaterialStateProperty.all(kButtonLabelColor),
+    foregroundColor: MaterialStateProperty.all(Colors.white),
     shape: MaterialStateProperty.all(
         RoundedRectangleBorder(borderRadius: BorderRadius.circular(100))),
   )),
@@ -68,11 +68,23 @@ ThemeData kDarkTheme = ThemeData(
     ),
   ),
   bottomNavigationBarTheme: BottomNavigationBarThemeData(
-    backgroundColor: kSecondaryColor,
+    backgroundColor: kBackgroundSecondaryColor,
     showUnselectedLabels: false,
     unselectedItemColor: Colors.white70,
   ),
   dividerTheme: DividerThemeData(
-    color: kSecondaryColor,
+    color: kBackgroundTertiaryColor,
   ),
+  sliderTheme: SliderThemeData(
+    activeTrackColor: kSystemPrimaryColor,
+    inactiveTrackColor: kBackgroundSecondaryColor,
+    thumbColor: kSystemPrimaryColor,
+    overlayShape: SliderComponentShape.noOverlay,
+    thumbShape: RoundSliderThumbShape(
+      enabledThumbRadius: 8,
+      disabledThumbRadius: 8,
+      elevation: 0,
+    ),
+    trackHeight: 4,
+  )
 );

@@ -1,12 +1,14 @@
 import 'package:flutter/material.dart';
-import 'package:sleep_sounds/presentation/widgets/pack_details.dart';
+import 'package:sleep_sounds/presentation/screens/pack_details_screen.dart';
 
 import '../../domain/entities/pack.dart';
+import 'pack_image_container.dart';
 
 class PackCard extends StatelessWidget {
   final Pack pack;
+  final bool replaceRoute;
 
-  const PackCard({Key? key, required this.pack}) : super(key: key);
+  const PackCard({Key? key, required this.pack, this.replaceRoute = false}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
@@ -21,18 +23,13 @@ class PackCard extends StatelessWidget {
             Positioned(
               child: GestureDetector(
                 onTap: () {
-                    Navigator.of(context).push(MaterialPageRoute(builder: (context) => PackDetails(pack: pack,)),);
+                    if (!replaceRoute) {
+                      Navigator.of(context).push(MaterialPageRoute(builder: (context) => PackDetailsScreen(pack: pack,)),);
+                    } else {
+                      Navigator.of(context).pushReplacement(MaterialPageRoute(builder: (context) => PackDetailsScreen(pack: pack,)),);
+                    }
                 },
-                child: Container(
-                  clipBehavior: Clip.hardEdge,
-                  decoration: BoxDecoration(
-                    border: Border.all(color: Color(0xFF2D344B), width: 1),
-                    borderRadius: BorderRadius.circular(32),
-                  ),
-                  child: Image.asset(
-                    pack.artwork,
-                  ),
-                ),
+                child: PackImageContainer(pack: pack),
               ),
             ),
             Positioned(
