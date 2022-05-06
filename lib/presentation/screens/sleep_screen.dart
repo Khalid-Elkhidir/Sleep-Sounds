@@ -48,7 +48,6 @@ class _SleepScreenState extends State<SleepScreen> {
             "Sleep",
             style: textTheme.headline4!.copyWith(fontSize: 24),
           ),
-          elevation: 0,
         ),
         body: currentIndex == 0
             ? SleepAll()

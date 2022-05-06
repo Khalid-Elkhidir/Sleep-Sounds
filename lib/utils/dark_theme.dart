@@ -32,6 +32,7 @@ ThemeData kDarkTheme = ThemeData(
   ),
   appBarTheme: const AppBarTheme(
       backgroundColor: kBackgroundPrimaryColor,
+      elevation: 0,
       systemOverlayStyle: SystemUiOverlayStyle(
         statusBarColor: Colors.transparent,
       )),
