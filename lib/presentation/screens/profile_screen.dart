@@ -22,9 +22,9 @@ class ProfileScreen extends StatelessWidget {
         child: Column(
           children: [
             ProfileContainer(),
-            // ProfileList(
-            //   tiles: tiles,
-            // ),
+            ProfileList(
+              tiles: tiles,
+            ),
           ],
         ),
       ),
@@ -34,25 +34,59 @@ class ProfileScreen extends StatelessWidget {
   List<Tile> tiles = const [
     Tile(
       children: [
-        CustomTile(icon: "assets/icons/crown.png", title: "Go Premium"),
+        CustomTile(
+          icon: "assets/icons/crown.png",
+          title: "Go Premium",
+          iconColor: kSystemTertiaryColor,
+          last: true,
+        ),
       ],
     ),
     Tile(
       children: [
-        CustomTile(icon: "assets/icons/music_heart.png", title: "Favorites"),
+        CustomTile(
+          icon: "assets/icons/music_heart.png",
+          title: "Favorites",
+          iconColor: kSystemPrimaryColor,
+          last: true,
+        ),
       ],
     ),
     Tile(
       children: [
-        CustomTile(icon: "assets/icons/document.png", title: "Privacy Policy"),
-        CustomTile(icon: "assets/icons/licence.png", title: "Terms of Use"),
+        CustomTile(
+          icon: "assets/icons/document.png",
+          title: "Privacy Policy",
+          iconColor: kSystemSecondaryColor,
+          last: false,
+        ),
+        CustomTile(
+            icon: "assets/icons/licence.png",
+            title: "Terms of Use",
+            iconColor: kSystemSecondaryColor,
+          last: true,),
       ],
     ),
     Tile(
       children: [
-        CustomTile(icon: "assets/icons/star.png", title: "Rate Us"),
-        CustomTile(icon: "assets/icons/support.png", title: "Send Feedback"),
-        CustomTile(icon: "assets/icons/share.png", title: "Share"),
+        CustomTile(
+          icon: "assets/icons/star.png",
+          title: "Rate Us",
+          iconColor: Colors.pink,
+          last: false,
+        ),
+        CustomTile(
+          icon: "assets/icons/support.png",
+          title: "Send Feedback",
+          iconColor: Colors.pink,
+          last: false,
+        ),
+        CustomTile(
+          icon: "assets/icons/share.png",
+          title: "Share",
+          iconColor: Colors.pink,
+          last: true,
+        ),
       ],
     ),
   ];
